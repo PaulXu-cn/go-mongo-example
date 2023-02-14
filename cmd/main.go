@@ -13,5 +13,12 @@ func main() {
 	qmgolearn.TestFindMany()
 	qmgolearn.TestFindManyCursor()
 
+	qmgolearn.TestQmgoUpdate()
+	qmgolearn.TestQmgoUpdateById()
+	qmgolearn.TestQmgoUpdateMany()
+
+	qmgolearn.TestQmgoUpsert()
+	qmgolearn.TestQmgoUpsertId()
+
 	mongolearn.TestConnUseDb()
 }

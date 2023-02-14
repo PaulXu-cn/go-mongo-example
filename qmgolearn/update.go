@@ -2,15 +2,15 @@ package qmgolearn
 
 import (
 	"context"
+	"fmt"
+	"time"
+
 	"github.com/qiniu/qmgo"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
-
-	"fmt"
-	"time"
 )
 
-func TestQMUpdate() {
+func TestQmgoUpdate() {
 	ctx := context.Background()
 	client, err := qmgo.NewClient(ctx, &qmgo.Config{Uri: mongoDsn})
 
@@ -39,7 +39,7 @@ func TestQMUpdate() {
 	fmt.Printf("qmgo update one status 2, err %v \n", err)
 }
 
-func TestQMUpdateById() {
+func TestQmgoUpdateById() {
 	ctx := context.Background()
 	client, err := qmgo.NewClient(ctx, &qmgo.Config{Uri: mongoDsn})
 
@@ -60,7 +60,7 @@ func TestQMUpdateById() {
 	fmt.Printf("qmgo update one by id status, id %+v,  err %v \n", theId, err)
 }
 
-func TestQMUpdateMany() {
+func TestQmgoUpdateMany() {
 	ctx := context.Background()
 	client, err := qmgo.NewClient(ctx, &qmgo.Config{Uri: mongoDsn})
 
@@ -79,5 +79,4 @@ func TestQMUpdateMany() {
 	// update many
 	aff, err := coll.UpdateAll(ctx, filter, setData)
 	fmt.Printf("qmgo update status, affect %+v,  err %v \n", aff.UpsertedCount, err)
-
 }
