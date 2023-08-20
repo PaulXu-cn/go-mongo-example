@@ -21,4 +21,5 @@ func main() {
 	qmgolearn.TestQmgoUpsertId()
 
 	mongolearn.TestConnUseDb()
+	mongolearn.TestConnWithMonitor()
 }
